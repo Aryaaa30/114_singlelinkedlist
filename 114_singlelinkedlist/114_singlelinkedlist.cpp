@@ -63,13 +63,23 @@ bool serachNode(int nim, Node* current, Node* previous) {
     }
     else if (current->noMhs == nim)
     {
-        retunr true;
+        return true;
     }
     else
     {
         return false;
     }
+}
 
+bool deleteNode(int nim) {
+    Node* current = START;
+    Node* previous = START;
+    if (serachNode(nim, previous, current) == false)
+        return false;
+    previous->next = current->next;
+    if (current == START)
+        START = current->next;
+    return true;
 }
 
 
