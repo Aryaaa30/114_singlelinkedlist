@@ -89,6 +89,22 @@ bool listEmpty() {
         return false;
 }
 
+void traverse() {
+    if (listEmpty()) {
+        cout << "List kosong" << endl;
+        system("pause");
+        system("cls");
+        return;
+    }
+    else {
+        Node* currentNode = START;
+        while (currentNode != NULL) {
+            cout << "NIM : " << currentNode->noMhs << ", Nama : " << currentNode->next << endl;
+            currentNode = currentNode->next;
+        }
+    }
+}
+
 
 
 int main()
